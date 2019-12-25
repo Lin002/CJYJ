@@ -14,4 +14,5 @@ public class Admin {
     private String adminPassword;
     private int adminTel;
     private Email adminEmail;
+
 }
