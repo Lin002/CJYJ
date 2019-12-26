@@ -5,6 +5,7 @@ import com.group.javaee.Pojo.Student;
 import com.group.javaee.Service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -28,7 +29,7 @@ public class StudentController {
     /*2019 12.22 21.03 登陆实现*/
     @RequestMapping("/Login")
     /*@ResponseBody*/
-    public String Login(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String Login(HttpServletRequest request, HttpServletResponse response,Model model) throws IOException {
         response.setContentType("text/html;charset=utf-8");
         request.setCharacterEncoding("utf-8");
 
@@ -39,6 +40,13 @@ public class StudentController {
         System.out.println(student.getStudentId());
         System.out.println(student.getStudentPassword());
         System.out.println(studentMapper.checkStudent(student).toString());*/
+
+
+//        String license=request.getParameter("license");
+//        model.addAttribute("license",license);
+
+
+
         PrintWriter out = response.getWriter();
         out.println("<script> alert(\"修改成功!\"); </script>");
         /*response.setHeader("refresh","1;URL=adminPage.jsp");*/
